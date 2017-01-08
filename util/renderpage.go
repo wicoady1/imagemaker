@@ -7,7 +7,8 @@ import (
 )
 
 const (
-	TemplateImageMaker string = "intools.imagemaker.html"
+	TemplateImageMaker  string = "intools.imagemaker.html"
+	TemplateImageResult string = "intools.imageresult.html"
 )
 
 func RenderPage(w http.ResponseWriter, templateName string, templateData map[string]string) error {
@@ -17,6 +18,10 @@ func RenderPage(w http.ResponseWriter, templateName string, templateData map[str
 	if templateName == "imagemaker" {
 		fileTemplateName = "templates/" + TemplateImageMaker
 		oriTemplateName = TemplateImageMaker
+	}
+	if templateName == "imageresult" {
+		fileTemplateName = "templates/" + TemplateImageResult
+		oriTemplateName = TemplateImageResult
 	}
 
 	dat, err := ioutil.ReadFile(fileTemplateName)

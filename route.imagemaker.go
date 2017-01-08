@@ -59,6 +59,13 @@ func UploadFile(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 			log.Println(err)
 		}
 
+		err = util.RenderPage(w, "imageresult", map[string]string{
+			"ImageResult": "/assets/images/output.png",
+		})
+		if err != nil {
+			log.Println(err)
+		}
+
 		/*
 			fmt.Fprintf(w, "%v", handler.Header)
 			f, err := os.OpenFile("./test/"+handler.Filename, os.O_WRONLY|os.O_CREATE, 0666)
