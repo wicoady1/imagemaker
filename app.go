@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"self/imagemaker/util"
+	"github.com/wicoady1/imagemaker/util"
 
 	"github.com/julienschmidt/httprouter"
 )
